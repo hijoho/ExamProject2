@@ -2,14 +2,14 @@ import java.util.ArrayList;
 public class GameMaster {
     public static void main(String[] args) {
         ArrayList<Character> party = new ArrayList<Character>();
-        party.add(new Hero("勇者", 100, "剣"));
-        party.add(new Wizard("魔法使い", 60, 30));
-        party.add(new Thief("盗賊", 70));
+        Hero hero = new Hero("勇者", 100, "剣"); party.add(hero);
+        Wizard wizard = new Wizard("魔法使い", 60, 30); party.add(wizard);
+        Thief thief = new Thief("盗賊", 70); party.add(thief);
 
         ArrayList<Monster> monsters = new ArrayList<Monster>();
-        monsters.add(new Matango('A', 45));
-        monsters.add(new Goblin('A', 50));
-        monsters.add(new Slime('A', 40));
+        Matango matango = new Matango('A', 45); monsters.add(matango);
+        Goblin goblin = new Goblin('A', 50); monsters.add(goblin);
+        Slime slime = new Slime('A', 40); monsters.add(slime);
 
         System.out.println("---味方パーティ---");
         for(Character c : party){
@@ -32,7 +32,7 @@ public class GameMaster {
             }
         }
         System.out.println("\nダメージを受けた勇者が突然光だした！");
-        party.set(0, new SuperHero((Hero)party.get(0)));
+        party.set(0, new SuperHero(hero));
         System.out.println("勇者はスーパーヒーローに進化した！");
         for(Monster m : monsters){
             party.get(0).attack(m);
