@@ -1,6 +1,7 @@
 public class Matango extends Monster{
     public Matango(char suffix, int hp) {
         super(suffix, hp);
+        setName("お化けキノコ");
     }
 
     public void attack(Creature target) {

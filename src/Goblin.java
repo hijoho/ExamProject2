@@ -1,6 +1,7 @@
 public class Goblin extends Monster{
     public Goblin(char suffix, int hp) {
         super(suffix, hp);
+        setName("ゴブリン");
     }
 
     public void attack(Creature target) {
