@@ -4,14 +4,13 @@ public abstract class Character implements Creature {
     public Character(String name, int hp) {
         this.setName(name);
         this.setHp(hp);
+        if(hp<0){
+            throw new IllegalArgumentException("初期設定に誤りがあるため、キャラクターを作成できませんでした");
+        }
     }
 
     public void setHp(int hp) {
-        if(hp<0){
-            throw new IllegalArgumentException("初期設定に誤りがあるため、キャラクターを作成できませんでした");
-        }else{
-            this.hp = hp;
-        }
+        this.hp = hp;
     }
     public int getHp(){
         return this.hp;
