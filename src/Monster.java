@@ -2,7 +2,8 @@ public abstract class Monster implements Creature {
     private String name;
     private int hp;
     private char suffix;
-    public Monster(char suffix, int hp) {
+    public Monster(String name, char suffix, int hp) {
+        this.setName(name);
         this.setSuffix(suffix);
         this.setHp(hp);
         if(hp<0){

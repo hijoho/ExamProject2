@@ -1,7 +1,6 @@
 public final class Slime extends Monster {
-    public Slime(char suffix, int hp) {
-        super(suffix, hp);
-        this.setName("スライム");
+    public Slime(String name, char suffix, int hp) {
+        super(name, suffix, hp);
     }
 
     public void attack(Creature target) {

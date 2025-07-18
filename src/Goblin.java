@@ -1,7 +1,6 @@
 public class Goblin extends Monster{
-    public Goblin(char suffix, int hp) {
-        super(suffix, hp);
-        this.setName("ゴブリン");
+    public Goblin(String name, char suffix, int hp) {
+        super(name, suffix, hp);
     }
 
     public void attack(Creature target) {
