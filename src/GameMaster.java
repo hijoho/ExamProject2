@@ -7,7 +7,7 @@ public class GameMaster {
         Thief thief = new Thief("盗賊", 70); party.add(thief);
 
         ArrayList<Monster> monsters = new ArrayList<Monster>();
-        Matango matango = new Matango("マタンゴ", 'A', 45); monsters.add(matango);
+        Matango matango = new Matango("お化けキノコ", 'A', 45); monsters.add(matango);
         Goblin goblin = new Goblin("ゴブリン", 'A', 50); monsters.add(goblin);
         Slime slime = new Slime("スライム", 'A', 40); monsters.add(slime);
 
