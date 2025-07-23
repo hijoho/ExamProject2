@@ -12,44 +12,44 @@ public class GameMaster {
         Slime slime = new Slime('A', 40); monsters.add(slime);
 
         System.out.println("---味方パーティ---");
-        for(Character c : party){
-            c.showStatus();
+        for(Character character : party){
+            character.showStatus();
         }
         System.out.println("---敵グループ---");
-        for(Monster m : monsters){
-            m.showStatus();
+        for(Monster monster : monsters){
+            monster.showStatus();
         }
         System.out.println("\n味方の総攻撃！");
-        for(Character c : party){
+        for(Character character : party){
             for(Monster m : monsters){
-                c.attack(m);
+                character.attack(m);
             }
         }
         System.out.println("\n敵の総攻撃！");
-        for(Monster m : monsters){
+        for(Monster monster : monsters){
             for(Character c : party){
-                m.attack(c);
+                monster.attack(c);
             }
         }
         System.out.println("\nダメージを受けた勇者が突然光だした！");
         party.set(0, new SuperHero(hero));
         System.out.println("勇者はスーパーヒーローに進化した！");
-        for(Monster m : monsters){
-            party.get(0).attack(m);
+        for(Monster monster : monsters){
+            party.get(0).attack(monster);
         }
         System.out.println("\n---味方パーティ最終ステータス---");
-        for(Character c : party){
-            c.showStatus();
-            if(c.isAlive()){
+        for(Character character : party){
+            character.showStatus();
+            if(character.isAlive()){
                 System.out.println("生存状況：生存");
             }else{
                 System.out.println("生存状況：死亡");
             }
         }
         System.out.println("\n---敵グループ最終ステータス---");
-        for(Monster m : monsters){
-            m.showStatus();
-            if(m.isAlive()){
+        for(Monster monster : monsters){
+            monster.showStatus();
+            if(monster.isAlive()){
                 System.out.println("生存状況：生存");
             }else{
                 System.out.println("生存状況：討伐済み");
