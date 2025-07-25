@@ -1,7 +1,17 @@
+import creature.Character;
+import creature.Monster;
+import creature.character.Hero;
+import creature.character.SuperHero;
+import creature.character.Thief;
+import creature.character.Wizard;
+import creature.monster.Goblin;
+import creature.monster.Matango;
+import creature.monster.Slime;
+
 import java.util.ArrayList;
 public class GameMaster {
     public static void main(String[] args) {
-        ArrayList<Character> party = new ArrayList<Character>();
+        ArrayList<creature.Character> party = new ArrayList<creature.Character>();
         Hero hero = new Hero("勇者", 100, "剣"); party.add(hero);
         Wizard wizard = new Wizard("魔法使い", 60, 30); party.add(wizard);
         Thief thief = new Thief("盗賊", 70); party.add(thief);
@@ -12,7 +22,7 @@ public class GameMaster {
         Slime slime = new Slime('A', 40); monsters.add(slime);
 
         System.out.println("---味方パーティ---");
-        for(Character character : party){
+        for(creature.Character character : party){
             character.showStatus();
         }
         System.out.println("---敵グループ---");
@@ -20,14 +30,14 @@ public class GameMaster {
             monster.showStatus();
         }
         System.out.println("\n味方の総攻撃！");
-        for(Character character : party){
+        for(creature.Character character : party){
             for(Monster m : monsters){
                 character.attack(m);
             }
         }
         System.out.println("\n敵の総攻撃！");
         for(Monster monster : monsters){
-            for(Character c : party){
+            for(creature.Character c : party){
                 monster.attack(c);
             }
         }
