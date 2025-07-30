@@ -22,9 +22,16 @@ public class Wizard extends Character {
         if(this.getMp()<=0){
             System.out.println("MPが足りない！");
         }else{
-            System.out.println(this.getName()+"は火の玉を放った！"+target.getName()+"に3のダメージを与えた！");
+            System.out.println(this.getName()+"は"+this.getWeapon().getName()+this.getWeapon().attackMessage()+target.getName()+"に3のダメージを与えた！");
             target.setHp(target.getHp()-this.getWeapon().getDamage());
             this.setMp(this.getMp()-this.getWeapon().getCost());
         }
+    }
+    public void attack(Creature target) {
+        System.out.println(this.getName()+"は石を投げた！"+target.getName()+"に３のダメージを与えた！");
+        target.setHp(target.getHp()-3);
+    }
+    public void showStatus(){
+        System.out.println(this.getName()+"：HP"+this.getHp()+"/"+"MP"+this.getMp());
     }
 }

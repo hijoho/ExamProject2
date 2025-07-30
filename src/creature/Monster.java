@@ -41,4 +41,10 @@ public abstract class Monster implements Creature {
     public void showStatus(){
         System.out.println(this.getName()+this.getSuffix()+"：HP"+this.getHp());
     }
+    public void run(){
+        System.out.println(this.getName()+this.getSuffix()+"は逃げ出した");
+    }
+    public void die(){
+        System.out.println(this.getName()+this.getSuffix()+"を倒した！");
+    }
 }

@@ -7,14 +7,18 @@ import creature.character.Wizard;
 import creature.monster.Goblin;
 import creature.monster.Matango;
 import creature.monster.Slime;
+import weapon.Dagger;
+import weapon.Sword;
+import weapon.Wand;
+import weapon.Weapon;
 
 import java.util.ArrayList;
 public class GameMaster {
     public static void main(String[] args) {
         ArrayList<creature.Character> party = new ArrayList<creature.Character>();
-        Hero hero = new Hero("勇者", 100, "剣"); party.add(hero);
-        Wizard wizard = new Wizard("魔法使い", 60, 30); party.add(wizard);
-        Thief thief = new Thief("盗賊", 70); party.add(thief);
+        Hero hero = new Hero("勇者", 100, new Sword()); party.add(hero);
+        Wizard wizard = new Wizard("魔法使い", 60, 30, new Wand()); party.add(wizard);
+        Thief thief = new Thief("盗賊", 70, new Dagger()); party.add(thief);
 
         ArrayList<Monster> monsters = new ArrayList<Monster>();
         Matango matango = new Matango('A', 45); monsters.add(matango);
